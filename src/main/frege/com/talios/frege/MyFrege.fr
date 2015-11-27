@@ -1,4 +1,9 @@
 module com.talios.frege.MyFrege where
 
+fizzes = cycle ["", "", "fizz"]
+buzzes = cycle ["", "", "" , "", "buzz"]
+pattern = zipWith (++) fizzes buzzes
+numbers = map show [1..]
+fizzbuzz = zipWith max pattern numbers
 
-main _ = println "hello world!!"
+main _ = for (take 100 fizzbuzz) println
